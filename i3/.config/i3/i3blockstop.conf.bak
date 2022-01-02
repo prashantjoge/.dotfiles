@@ -1,0 +1,107 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#https://github.com/vivien/i3blocks-contrib
+# List of valid properties:
+
+#
+#Inner Sight The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/lib/i3blocks/$BLOCK_NAME
+full_text=
+markup=pango
+align=center
+color=#93a1a1
+separator=false
+separator_block_width=0
+
+[separator2]
+full_text=<span background="#021215" foreground="#003b4a"></span>
+markup=pango
+# Guess the weather hourly
+[weather]
+#command=curl -Ss 'https://wttr.in/trivandrum?0&T&Q' | cut -c 16- | head -2 | xargs echo
+
+#command=(for x in 1; do echo "$(curl -Ss 'https://wttr.in/trivandrum' | cut -d ' ' -f 3 | head -1 | xargs echo)  $(curl -Ss 'https://wttr.in/trivandrum?0&T&Q' | cut -c 16- | head -3 | xargs echo)"; done;)
+interval=3600
+markup=pango
+label=<span background="#003b4a"></span>
+##021215
+[separator1]
+full_text=<span background="#003b4a" foreground="#4a0f00"></span>
+markup=pango
+[light]
+
+label=<span background="#4a0f00"></span>
+instance=intel_backlight
+interval=2
+separator=false
+markup=pango
+
+[separator2]
+full_text=<span background="#4a0f00" foreground="#003b4a"></span>
+markup=pango
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+
+label=<span background="#003b4a"></span>
+
+interval=30
+markup=pango
+
+[separator1]
+full_text=<span background="#4a0f00" foreground="#021215"></span>
+markup=pango
+[iface2]
+
+label=<span background="#4a0f00">
+
+label=
+</span>
+instance=wlan0
+interval=1
+separator=true
+markup=pango
+
+[wifi]
+label=說
+interval=1
+separator=true
+markup=pango
+min_width=50
+
+[bandwidth]
+instance=wlan0
+interval=1
+separator=false
+markup=pango
+min_width=110
+
+[separator2]
+full_text=<span background="#021215" foreground="#003b4a"></span>
+markup=pango
+[battery2]
+label=<span background="#003b4a">⚡</span>
+interval=30
+markup=pango
+
+
+[separator1]
+full_text=<span background="#003b4a" foreground="#021215"></span>
+markup=pango
+[arch-update]
+markup=pango
+interval= 3600
+LABEL=
+
+
+[separator2]
+full_text=<span background="#021215" foreground="#003b4a"></span>
+markup=pango
+[aur-update]
+markup=pango
+interval=43200
+UPDATE_COLOR=red
+QUIET=1
+IGNORE=root vidyodesktop

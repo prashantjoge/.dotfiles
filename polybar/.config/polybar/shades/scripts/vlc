@@ -1,0 +1,33 @@
+#!/bin/bash
+OUT_TEXT="...Nothing to do..."
+
+
+span1="<span background='#003b4a' foreground='#1AFE85'>" #021215
+span2=" </span>"
+INFO_CMUS=$(playerctl metadata)
+INFO_TLEFT1=$(playerctl --player playerctld position)
+if [[ $? -eq 0 ]]; then
+  INFO_TITLE=$(playerctl metadata title)
+  INFO_ALBUM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*album//p' )
+  INFO_ARTIST=$(playerctl metadata artist)
+  INFO_TLEFT=$(echo "${INFO_TLEFT1}" | sed -e 's/\.[^\.]*$//')
+  INFO_TIME=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*time//p' | sed -e 's/^[ \t]*//')
+else
+
+echo "${OUT_TEXT}"
+  exit
+fi
+
+if [[ "${INFO_ARTIST}" ]] && [[ "${INFO_TITLE}" ]]; then
+  OUT_TEXT="${INFO_ARTIST} - ${INFO_TITLE} - ${INFO_TLEFT}:${INFO_TIME}"
+elif [[ "${INFO_TITLE}" ]]; then
+  OUT_TEXT="${INFO_TITLE} -${INFO_TLEFT}:${INFO_TIME}"
+else OUT_TEXT="Unknown Track"
+fi
+OUT_TEXT=$(playerctl metadata --format " {{ artist }}-{{ title }} [{{duration(position)}}:{{ duration(mpris:length)}}]")
+
+#OUT_TEXT=$(playerctl metadata --format "{{ artist }} - {{ title }}")
+#echo playerctl metadata --format "Now playing: {{ artist }}  - {{ title }}-{{duration(position)}} - {{ duration(mpris:length) }}"
+echo "${OUT_TEXT}"
+ #echo "${OUT_TEXT}"
+exit

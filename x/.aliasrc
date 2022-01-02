@@ -1,0 +1,32 @@
+# ~/.aliasrc
+
+alias  bc="bc -lq"
+alias StorageExplorer="StorageExplorer > /dev/null 2>&1 &"
+alias paco='sudo pacman -Sc'
+alias ls='ls --color=auto'
+#alias pbcopy='xsel --clipboard --input'
+#alias pbpaste='xsel --clipboard --output'
+alias ll='ls -lFth'
+alias lla='ls -lFtha'
+alias llgr='ls -l . | grep'
+alias llagr='ls -la . | grep'
+alias m='mount'
+alias um='umount'
+alias psgr='ps aux | grep'
+alias p='sudo pacman'
+alias psi='pacman -Si'
+alias pss='pacman -Ss'
+alias pqi='pacman -Qi'
+alias pqs='pacman -Qs'
+alias rsc='sudo pacman -Rsc'
+alias rscn='sudo pacman -Rscn'
+alias pt='pactree'
+alias ptr='pactree -r'
+alias ytd='youtube-dl --config-location ~/.config/youtube-dl/youtube-dl.conf'
+alias fa='find -maxdepth 1 -type f -iregex ".*\.\(aac\|flac\|mp3\|ogg\|wav\)$" | sort > playlist'
+alias v='f -e nvim' # quick opening files with vim
+alias m='f -e mplayer' # quick opening files with mplayer
+alias o='a -e xdg-open' # quick opening files with xdg-open
+alias pwsh='/usr/bin/pwsh-preview'
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
