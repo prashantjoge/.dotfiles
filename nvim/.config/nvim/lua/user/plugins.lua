@@ -75,6 +75,8 @@ return packer.startup(function(use)
   use "nixprime/cpsm"
   use "sharkdp/fd"
 
+-- auto_save 
+  use "Pocco81/AutoSave.nvim"
 -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
