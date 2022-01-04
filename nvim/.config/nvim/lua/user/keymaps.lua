@@ -62,16 +62,16 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- telescope live grep
-keymap("n","<c-g>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<c-g>", "<cmd>Telescope live_grep<cr>", opts)
 --keymap("n","<c-f>", "<cmd> lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({winblend = 10}))<cr>", opts)
 
-keymap("n","<c-f>", "<cmd>Telescope find_files winblend=10<cr>", opts)
-keymap("n","<c-b>", "<cmd>Telescope buffers<cr>", opts)
-keymap("n","<c-t>", "<cmd>Telescope help_tags<cr>", opts)
+keymap("n", "<c-f>", "<cmd>Telescope find_files winblend=10<cr>", opts)
+keymap("n", "<c-b>", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope help_tags<cr>", opts)
 
