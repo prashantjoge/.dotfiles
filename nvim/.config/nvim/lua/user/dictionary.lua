@@ -1,5 +1,5 @@
 local dictionary_status_ok, dictionary = pcall(require, "dictionary")
-if not cmp_status_ok then
+if not dictionary_status_ok then
   return
 end
 
