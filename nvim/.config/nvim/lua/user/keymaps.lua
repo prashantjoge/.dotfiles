@@ -74,4 +74,7 @@ keymap("n", "<c-g>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<c-f>", "<cmd>Telescope find_files winblend=10<cr>", opts)
 keymap("n", "<c-b>", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope help_tags<cr>", opts)
+keymap("n", "<A-f>", ":Format<cr>", opts)
+keymap("n", "<A-s>", ":source %<cr>", opts)
 
+--keymap("n", "<A-f>", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)
