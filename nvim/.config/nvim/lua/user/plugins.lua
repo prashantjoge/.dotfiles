@@ -58,6 +58,7 @@ return packer.startup(function(use)
 	use("goolord/alpha-nvim")
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
+	--use("rcarriga/nvim-notify")
 	-- vim auto sessions
 	use({
 		"rmagatti/auto-session",
@@ -70,7 +71,7 @@ return packer.startup(function(use)
 	})
 	use("gelguy/wilder.nvim")
 	--use "roxma/vim-hug-neovim-rpc"
-	--use "roxma/nvim-yarp"
+	--use("roxma/nvim-yarp")
 	use("romgrk/fzy-lua-native")
 	use("nixprime/cpsm")
 	use("sharkdp/fd")
@@ -148,7 +149,7 @@ return packer.startup(function(use)
 	--}
 
 	-- Telescope
-	--use "BurntSushi/ripgrep"
+	--use("BurntSushi/ripgrep")
 	use("nvim-telescope/telescope-symbols.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-telescope/telescope.nvim")
