@@ -2,7 +2,7 @@
 -- Source: http:--thejakeharding.com/tutorial/2012/06/13/using-spell-check-in-vim.html
 -- Also I'm adding different sources for completion here, if you aren't on Mac you might need to install "look"
 vim.api.nvim_exec(
-  [[
+	[[
 augroup markdownSpell
     autocmd!
     autocmd FileType markdown,md,txt setlocal spell
@@ -16,5 +16,5 @@ autocmd FileType markdown,md,txt lua require'cmp'.setup.buffer {
 \ }
 augroup END
 ]],
-  false
+	false
 )

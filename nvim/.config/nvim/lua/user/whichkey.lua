@@ -97,6 +97,7 @@ local mappings = {
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 	["C"] = { "<cmd>Cheatsheet<cr>", "Cheatsheet" },
+	["T"] = { "<cmd>lua require('telescope').extensions.dict.synonyms()<cr>", "Thesaurus" },
 
 	p = {
 		name = "Packer",
@@ -133,10 +134,6 @@ local mappings = {
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = {
-			"<cmd>Telescope lsp_document_diagnostics<cr>",
-			"Document Diagnostics",
-		},
 		w = {
 			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
 			"Workspace Diagnostics",
@@ -172,7 +169,14 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
-
+	W = {
+		name = "Word Processing",
+		g = { "<cmd>GrammarousCheck<cr>", "Grammerous Check" },
+		G = { "<cmd>GrammarousReset<cr>", "Grammerous Reset" },
+		l = { "<cmd>LanguageToolSetup<cr>", "Language Tool Setup" },
+		L = { "<cmd>LanguageToolCheck<cr>", "Language Tool Check" },
+		d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
+	},
 	t = {
 		name = "Terminal",
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },

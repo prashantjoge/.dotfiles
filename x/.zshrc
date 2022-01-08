@@ -152,7 +152,7 @@ FZF_CTRL_R_COMMAND="'ps -ef' \
 
 
 export PATH=$PATH:/home/aaron/bin
-
+export PATH=$PATH:/home/aaron/langaugetool
 #(cat ~/.cache/wal/sequences &)
 eval "$(fasd --init auto)"
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet

@@ -58,6 +58,7 @@ return packer.startup(function(use)
 	use("goolord/alpha-nvim")
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
+	use("nathom/filetype.nvim")
 	--use("rcarriga/nvim-notify")
 	-- vim auto sessions
 	use({
@@ -109,11 +110,19 @@ return packer.startup(function(use)
 	--      }
 	--    end
 	--  }
-	-- spell check
-	use("f3fora/cmp-spell")
-
-	-- W Dictionary
-	--  use "uga-rosa/cmp-dictionary"
+	-- Word Processing
+	--	use("f3fora/cmp-spell")
+	use("uga-rosa/cmp-dictionary")
+	use("rudism/telescope-dict.nvim")
+	use("vigoux/LanguageTool.nvim")
+	use("rhysd/vim-grammarous")
+	use({
+		"brymer-meneses/grammar-guard.nvim",
+		requires = {
+			"neovim/nvim-lspconfig",
+			"williamboman/nvim-lsp-installer",
+		},
+	})
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
@@ -140,13 +149,6 @@ return packer.startup(function(use)
 	--  end
 	--  }
 	--
-	--use {
-	--    "brymer-meneses/grammar-guard.nvim",
-	--    requires = {
-	--        "neovim/nvim-lspconfig",
-	--        "williamboman/nvim-lsp-installer"
-	--    },
-	--}
 
 	-- Telescope
 	--use("BurntSushi/ripgrep")

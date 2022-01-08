@@ -20,6 +20,12 @@ local completion = null_ls.builtins.completion
 null_ls.setup({
 	debug = false,
 	sources = {
+		completion.spell,
+		diagnostics.misspell.with({
+			filetypes = { "markdown", "text", "txt" },
+			args = { "$FILENAME" },
+			cmd = { "misspell" },
+		}),
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		--		formatting.black.with({ extra_args = { "--fast" } }), --formatting for python
 		formatting.stylua, -- for lua
@@ -27,7 +33,7 @@ null_ls.setup({
 		-- formatting.autopep8 -- for python
 		-- diagnostics.flake8  --for python
 		diagnostics.write_good.with({
-			filetypes = { "markdown", "text" },
+			filetypes = { "markdown", "text", "" },
 			args = { "--text=$TEXT", "--parse" },
 			command = "write-good",
 		}),

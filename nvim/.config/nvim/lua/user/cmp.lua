@@ -44,6 +44,30 @@ local kind_icons = {
 	TypeParameter = "",
 }
 
+require("cmp_dictionary").setup({
+	dic = {
+		["*"] = { "/usr/share/dict/british-english" },
+		--		["markdown"] = { "path/to/mddict", "path/to/mddict2" },
+		--		["javascript,typescript"] = { "path/to/jsdict" },
+	},
+	-- The following are default values, so you don't need to write them if you don't want to change them
+	exact = 2,
+	async = true,
+	capacity = 5,
+	debug = false,
+})
+
+-- require("cmp").setup.cmdline("/", {
+-- 	sources = {
+-- 		{ name = "buffer" },
+-- 	},
+-- })
+-- require("cmp").setup.cmdline(":", {
+-- 	sources = {
+-- 		{ name = "cmdline" },
+-- 	},
+-- })
+
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 cmp.setup({
 	snippet = {
@@ -105,10 +129,11 @@ cmp.setup({
 				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
-				spell = "[Spell]",
+				--		spell = "[Spell]",
 				calc = "[calc]",
 				cmdline = "[cmdline]",
 				emoji = "[emoji]",
+				dictionary = "[dictionary]",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -119,10 +144,11 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "spell" },
+		--	{ name = "spell" },
 		{ name = "calc" },
 		{ name = "cmdline" },
 		{ name = "emoji" },
+		{ name = "dictionary" },
 	},
 
 	confirm_opts = {
