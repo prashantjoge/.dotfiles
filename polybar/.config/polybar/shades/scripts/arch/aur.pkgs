@@ -3,39 +3,4 @@
  3.  extra downloading...
  4.  community downloading...
  5. : Starting full system upgrade...
- 6. resolving dependencies...
- 7. looking for conflicting packages...
-    
- 8. Package (26)                  Old Version        New Version        Net Change  Download Size
-    
- 9. extra/bluez                   5.62-1             5.63-1              -0.30 MiB       0.81 MiB
-10. extra/bluez-libs              5.62-1             5.63-1               0.00 MiB       0.09 MiB
-11. extra/bluez-utils             5.62-1             5.63-1              -3.70 MiB       0.94 MiB
-12. core/ca-certificates-mozilla  3.73.1-1           3.74-1               0.02 MiB       0.34 MiB
-13. community/containerd          1.5.8-1            1.5.9-1              0.00 MiB      18.91 MiB
-14. community/dotnet-host                            6.0.0.sdk100-2       0.48 MiB       0.15 MiB
-15. community/dotnet-runtime                         6.0.0.sdk100-2      64.83 MiB      22.05 MiB
-16. extra/evolution               3.42.2-1           3.42.3-1             0.07 MiB      10.86 MiB
-17. extra/evolution-data-server   3.42.2-1           3.42.3-1             0.06 MiB       4.49 MiB
-18. extra/gnome-autoar            0.4.1-1            0.4.2-1              0.00 MiB       0.07 MiB
-19. community/go                  21.17.5-1         2:1.17.6-1           0.02 MiB      97.41 MiB
-20. extra/libreoffice-still       7.1.8-3            7.1.8-5            -19.84 MiB     132.09 MiB
-21. extra/libsoup                 2.74.2-1           2.74.2-2             0.02 MiB       0.58 MiB
-22. extra/libsoup3                3.0.4-1            3.0.4-2              0.02 MiB       0.46 MiB
-23. extra/libsysprof-capture                         3.42.1-2             0.23 MiB       0.04 MiB
-24. core/nss                      3.73.1-1           3.74-1              -0.52 MiB       1.52 MiB
-25. community/pinta               1.7.1-1            2.0.1-1              5.56 MiB       1.93 MiB
-26. extra/poppler                 21.11.0-1          22.01.0-1            0.16 MiB       1.47 MiB
-27. extra/poppler-glib            21.11.0-1          22.01.0-1            0.15 MiB       0.27 MiB
-28. extra/python-setuptools       157.4.0-6         1:59.1.0-1          -0.01 MiB       0.55 MiB
-29. extra/qt5-base                5.15.2+kde+r276-1  5.15.2+kde+r277-1    0.00 MiB      12.93 MiB
-30. extra/qt5-declarative         5.15.2+kde+r42-1   5.15.2+kde+r43-1     0.15 MiB       4.51 MiB
-31. extra/qt5-svg                 5.15.2+kde+r15-1   5.15.2+kde+r16-1     0.00 MiB       0.15 MiB
-32. core/sqlite                   3.37.1-1           3.37.2-1             0.00 MiB       1.70 MiB
-33. core/util-linux               2.37.2-4           2.37.2-5            -1.94 MiB       2.34 MiB
-34. core/util-linux-libs          2.37.2-4           2.37.2-5            -0.48 MiB       0.34 MiB
-    
-35. Total Download Size    316.98 MiB
-36. Total Installed Size  1252.28 MiB
-37. Net Upgrade Size        44.98 MiB
-    
+ 6.  there is nothing to do

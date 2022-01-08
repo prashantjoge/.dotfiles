@@ -1,0 +1,1 @@
+../.dotfiles/bin/bin/brightness_notificationup.sh

@@ -1,0 +1,1 @@
+../.dotfiles/bin/bin/xsyslock.sh

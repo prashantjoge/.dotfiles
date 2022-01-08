@@ -24,7 +24,7 @@ own_window_title 'conky'
 own_window_argb_visual yes
 own_window_argb_value 0
 own_window_type override
-own_window_colour AF6113
+own_window_colour 6F6D6F
 
 own_window_hints undecorated,below,skip_taskbar,skip_pager
 own_window_class conky
@@ -36,8 +36,8 @@ xftalpha 0.5
 short_units yes
 xinerama_head 2
 
-color1 ddd5cc
-color2 ddd5cc
+color1 e7e6e6
+color2 e7e6e6
 TEXT
 ${voffset 10}
 ${color1}${font Inconsolata Regular:pixelsize=16}GENERAL SETTINGS${color 9aa8cd}${stippled_hr 2}${color2}${font Inconsolata Regular:pixelsize=11}
