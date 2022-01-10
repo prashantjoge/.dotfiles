@@ -1,12 +1,12 @@
 local status_ok, wilder = pcall(require, "wilder")
 if not status_ok then
-  return
+	return
 end
 
-local setup = ({
-  vim.cmd [[
+local setup = {
+	vim.cmd([[
   
-        call wilder#setup({'modes': [':', '/', '?']})
+        call wilder#setup({'modes': [':', '/' ]})
 
         call wilder#set_option('pipeline', [
               \   wilder#branch(
@@ -87,5 +87,5 @@ local setup = ({
               \ '/': s:wildmenu_renderer,
               \ 'substitute': s:wildmenu_renderer,
               \ }))
-          ]]
-})
+          ]]),
+}

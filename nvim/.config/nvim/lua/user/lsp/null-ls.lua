@@ -20,12 +20,14 @@ local completion = null_ls.builtins.completion
 null_ls.setup({
 	debug = false,
 	sources = {
+		actions.gitsigns,
+		hover.dictionary,
 		completion.spell,
 		diagnostics.misspell.with({
 			filetypes = { "markdown", "text", "txt" },
 			args = { "$FILENAME" },
-			cmd = { "misspell" },
 		}),
+		cmd = { "misspell" },
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		--		formatting.black.with({ extra_args = { "--fast" } }), --formatting for python
 		formatting.stylua, -- for lua
@@ -33,10 +35,25 @@ null_ls.setup({
 		-- formatting.autopep8 -- for python
 		-- diagnostics.flake8  --for python
 		diagnostics.write_good.with({
-			filetypes = { "markdown", "text", "" },
+			filetypes = { "markdown", "tex", "" },
+			extra_filetypes = { "txt", "text" },
 			args = { "--text=$TEXT", "--parse" },
 			command = "write-good",
 		}),
+		diagnostics.proselint.with({
+			filetypes = { "markdown", "tex" },
+			extra_filetypes = { "txt", "text" },
+			command = "proselint",
+			args = { "--json" },
+		}),
+		actions.proselint.with({ filetypes = { "markdown", "tex" }, command = "proselint", args = { "--json" } }),
+		-- diagnostics.vale.with({
+		-- 	filetypes = {},
+		-- 	extra_filetypes = { "txt", "text" },
+		-- 	args = { "--no-exit", "--output=JSON", "$FILENAME" },
+		-- 	extra_args = { "--config=/home/aaron/.config/vale/.vale.ini" },
+		-- 	command = "vale",
+		-- }),
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then

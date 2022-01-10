@@ -22,6 +22,7 @@ require("user.autocommands")
 require("user.wilder")
 require("user.autosave")
 require("user.languagetool")
+--require("user.prosesitter")
 require("grammar-guard").init()
 
 --vim.g.tq_enabled_backends = { "openoffice_en", "mthesaur_txt" }

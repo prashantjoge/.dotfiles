@@ -97,7 +97,6 @@ local mappings = {
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 	["C"] = { "<cmd>Cheatsheet<cr>", "Cheatsheet" },
-	["T"] = { "<cmd>lua require('telescope').extensions.dict.synonyms()<cr>", "Thesaurus" },
 
 	p = {
 		name = "Packer",
@@ -176,6 +175,7 @@ local mappings = {
 		l = { "<cmd>LanguageToolSetup<cr>", "Language Tool Setup" },
 		L = { "<cmd>LanguageToolCheck<cr>", "Language Tool Check" },
 		d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
+		T = { "<cmd>lua require('telescope').extensions.dict.synonyms()<cr>", "Thesaurus" },
 	},
 	t = {
 		name = "Terminal",

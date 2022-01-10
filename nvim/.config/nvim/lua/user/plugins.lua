@@ -70,7 +70,7 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-	use("gelguy/wilder.nvim")
+	use("gelguy/wilder.nvim") -- A more adventurous wild menu
 	--use "roxma/vim-hug-neovim-rpc"
 	--use("roxma/nvim-yarp")
 	use("romgrk/fzy-lua-native")
@@ -86,7 +86,7 @@ return packer.startup(function(use)
 	--  use "richtan/pywal.vim"
 	--  use 'rktjmp/lush.nvim'
 	use("EdenEast/nightfox.nvim")
-	use("emacs-grammarly/lsp-grammarly")
+	use("emacs-grammarly/lsp-grammarly") --creates huge lsp logfiles and does not work well with large files (>5000 words)
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -111,7 +111,7 @@ return packer.startup(function(use)
 	--    end
 	--  }
 	-- Word Processing
-	--	use("f3fora/cmp-spell")
+	use("f3fora/cmp-spell")
 	use("uga-rosa/cmp-dictionary")
 	use("rudism/telescope-dict.nvim")
 	use("vigoux/LanguageTool.nvim")
@@ -123,7 +123,10 @@ return packer.startup(function(use)
 			"williamboman/nvim-lsp-installer",
 		},
 	})
-
+	--has syntax error
+	--	use({
+	--		"dvdsk/prosesitter",
+	--	})
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer

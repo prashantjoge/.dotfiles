@@ -1,2 +1,4 @@
 # .dotfiles
-A repo of my archlinux config
+
+A repository of my Archlinux configuration.
+Maintained using GNU Stow.
