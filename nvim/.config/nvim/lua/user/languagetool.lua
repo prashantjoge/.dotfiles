@@ -2,7 +2,7 @@ vim.g.languagetool_server_jar = "/home/aaron/languagetool/languagetool-server.ja
 --vim.g.languagetool_server_command = {
 --	"java -cp $HOME/languagetool/languagetool-server.jar org.languagetool.server.HTTPServer --port 8081 --allow-origin",
 --}
-local status_ok, langauagetool = pcall(require, "LanguageTool")
+local status_ok, languagetool = pcall(require, "LanguageTool")
 if not status_ok then
 	return
 end

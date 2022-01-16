@@ -15,9 +15,9 @@ local setup = {
 		-- the presets plugin, adds help for a bunch of default keybindings in Neovim
 		-- No actual key bindings are created
 		presets = {
-			operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-			motions = false, -- adds help for motions
-			text_objects = false, -- help for text objects triggered after entering an operator
+			operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+			motions = true, -- adds help for motions
+			text_objects = true, -- help for text objects triggered after entering an operator
 			windows = true, -- default bindings on <c-w>
 			nav = true, -- misc bindings to work with windows
 			z = true, -- bindings for folds, spelling and others prefixed with z
@@ -26,7 +26,7 @@ local setup = {
 	},
 	-- add operators that will trigger motion and text object completion
 	-- to enable all native operators, set the preset / operators plugin above
-	-- operators = { gc = "Comments" },
+	operators = { gc = "Comments" },
 	key_labels = {
 		-- override the label used to display some keys. It doesn't effect WK in any other way.
 		-- For example:
@@ -94,10 +94,11 @@ local mappings = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{})<cr>",
 		"Find files",
 	},
+	["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 	["C"] = { "<cmd>Cheatsheet<cr>", "Cheatsheet" },
-
+	["n"] = { "<cmd>:e %:h/filename<cr>", "New File" },
 	p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -129,7 +130,7 @@ local mappings = {
 			"Diff",
 		},
 	},
-
+	--[[  test ]]
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -156,6 +157,12 @@ local mappings = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
+		h = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Helper" },
+		H = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
+		d = { "<cmd>lua vim.lsp.buf.definition()<cr> ", "Goto Definition" },
+		D = { "<cmd>lua vim.lsp.buf.declaration()<cr> ", "Declaration" },
+		R = { "<cmd>lua vim.lsp.buf.references()<cr> ", "References" },
+		e = { "<cmd>lua vim.lsp.diagnostics.show_line_diagnostics()<cr>", "Show line diagnostics" },
 	},
 	s = {
 		name = "Search",
@@ -172,7 +179,7 @@ local mappings = {
 		name = "Word Processing",
 		g = { "<cmd>GrammarousCheck<cr>", "Grammerous Check" },
 		G = { "<cmd>GrammarousReset<cr>", "Grammerous Reset" },
-		l = { "<cmd>LanguageToolSetup<cr>", "Language Tool Setup" },
+		l = { "<cmd>LanguageToolSetUp<cr>", "Language Tool Setup" },
 		L = { "<cmd>LanguageToolCheck<cr>", "Language Tool Check" },
 		d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
 		T = { "<cmd>lua require('telescope').extensions.dict.synonyms()<cr>", "Thesaurus" },

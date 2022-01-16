@@ -15,7 +15,9 @@ grammar_guard.setup({
 				motherTongue = "en",
 			},
 			trace = { server = "verbose" },
-			dictionary = {},
+			dictionary = {
+				["*"] = { "/usr/share/dict/british-english" },
+			},
 			disabledRules = {},
 			hiddenFalsePositives = {},
 		},

@@ -1,5 +1,4 @@
 local fn = vim.fn
-
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -59,7 +58,7 @@ return packer.startup(function(use)
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
 	use("nathom/filetype.nvim")
-	--use("rcarriga/nvim-notify")
+	use("rcarriga/nvim-notify")
 	-- vim auto sessions
 	use({
 		"rmagatti/auto-session",
@@ -123,10 +122,9 @@ return packer.startup(function(use)
 			"williamboman/nvim-lsp-installer",
 		},
 	})
+	use("dkarter/bullets.vim") -- for bullets and numbered lists
 	--has syntax error
-	--	use({
-	--		"dvdsk/prosesitter",
-	--	})
+	--use("dvdsk/prosesitter")
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
@@ -160,6 +158,7 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use("sudormrfbin/cheatsheet.nvim")
+	use("nvim-telescope/telescope-file-browser.nvim")
 	-- Treesitter
 	use({
 

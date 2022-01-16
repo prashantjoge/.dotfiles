@@ -23,41 +23,43 @@ null_ls.setup({
 		actions.gitsigns,
 		hover.dictionary,
 		completion.spell,
-		diagnostics.misspell.with({
-			filetypes = { "markdown", "text", "txt" },
-			args = { "$FILENAME" },
-		}),
+		diagnostics.misspell,
 		cmd = { "misspell" },
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+		formatting.prettier.with({
+			extra_filetypes = { "txt" },
+			extra_args = {
+				"--no-semi",
+				"--single-quote",
+				"--jsx-single-quote",
+				"--print-width",
+				--"--parser=markdown",
+				--"--prose-wrap=always",
+			},
+		}),
 		--		formatting.black.with({ extra_args = { "--fast" } }), --formatting for python
 		formatting.stylua, -- for lua
 		-- formatting.eslint, -- for javascript (linter)
 		-- formatting.autopep8 -- for python
 		-- diagnostics.flake8  --for python
-		diagnostics.write_good.with({
-			filetypes = { "markdown", "tex", "" },
+		--diagnostics.write_good.with({ extra_filetypes = { "txt", "tex" } }),
+		--diagnostics.proselint.with({ extra_filetypes = { "txt" } }),
+		actions.proselint.with({ extra_filetypes = { "txt" } }),
+		diagnostics.vale.with({
 			extra_filetypes = { "txt", "text" },
-			args = { "--text=$TEXT", "--parse" },
-			command = "write-good",
+			extra_args = { "--config=/home/aaron/.config/vale/.vale.ini" },
 		}),
-		diagnostics.proselint.with({
-			filetypes = { "markdown", "tex" },
-			extra_filetypes = { "txt", "text" },
-			command = "proselint",
-			args = { "--json" },
-		}),
-		actions.proselint.with({ filetypes = { "markdown", "tex" }, command = "proselint", args = { "--json" } }),
-		-- diagnostics.vale.with({
-		-- 	filetypes = {},
-		-- 	extra_filetypes = { "txt", "text" },
-		-- 	args = { "--no-exit", "--output=JSON", "$FILENAME" },
-		-- 	extra_args = { "--config=/home/aaron/.config/vale/.vale.ini" },
-		-- 	command = "vale",
-		-- }),
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
 			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+			-- vim.cmd([[
+			--      augroup document_highlight
+			--      autocmd! * <buffer>
+			--      autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+			--      autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+			--
+			--      augroup END
+			--    ]])
 		end
 	end,
 })

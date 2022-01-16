@@ -1,21 +1,36 @@
-Plugins used
+Plugins
+used
 
-Completion plugins
-uga-rosa/cmp-dictionary --for dictionary completions
+Completion
+plugins
+uga-rosa/cmp-dictionary
+--for dictionary completions
 f3fora/cmp-spell (optional)
 
 Telescope Plugins
-rudism/telescope-dict.nvim -- for telescope lookup for meanings, synonyms (thesaurus)
+rudism/telescope-dict.nvim
+--
+for telescope lookup for meanings, synonyms (thesaurus) Grammar Checks
+rhysd/vim-grammarous
+(uses Language tool server)
+cmd:GrammourousCheck.
+vigoux/LanguageTool.nvim
+(uses Language tool server)
+cmd:
+LanguageToolSetup & LanguageToolCheck
+emacs-grammarly/lsp-grammarly --works
+only with markdown (gl)
 
-Grammar Checks
-rhysd/vim-grammarous (uses Language tool server) cmd:GrammourousCheck. 
-vigoux/LanguageTool.nvim (uses Language tool server) cmd: LanguageToolSetup & LanguageToolCheck
-emacs-grammarly/lsp-grammarly --works only with markdown (gl)
-
-Null_ls Built-ins (checks at run time) 
-btford/write-good English prose linter.(requires write-good installed) (gl)
-client9/misspell Checks commonly misspelled English words in source files. (requires misspell installed)
+Null_ls
+Built-ins
+(checks at run time)
+btford/write-good
+English prose
+linter.(requires write-good installed) (gl)
+client9/misspell
+Checks commonly misspelled English words in source files.
+(requires misspell installed)
 
 LSP Based (checks at runtime)
-brymer-meneses/grammar-guard.nvim (requires lspinstall latex ) (gl)
-
+brymer-meneses/grammar-guard.nvim
+(requires lspinstall latex) (gl)

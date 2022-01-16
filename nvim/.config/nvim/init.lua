@@ -24,7 +24,8 @@ require("user.autosave")
 require("user.languagetool")
 --require("user.prosesitter")
 require("grammar-guard").init()
-
+require("user.bullets")
+require("user.notify")
 --vim.g.tq_enabled_backends = { "openoffice_en", "mthesaur_txt" }
 --vim.g.tq_mthesaur_file = { "~/.config/nvim/thesaurus/mthesaur.txt" }
 ---vim.g.tq_language = { "en" }

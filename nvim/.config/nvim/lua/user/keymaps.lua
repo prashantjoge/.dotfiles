@@ -81,5 +81,5 @@ keymap("n", "<c-b>", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope help_tags<cr>", opts)
 keymap("n", "<A-f>", ":Format<cr>", opts)
 keymap("n", "<A-s>", ":source %<cr>", opts)
-
+keymap("n", "<space>fb", ":Telescope file_browser", { noremap = true })
 --keymap("n", "<A-f>", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)
