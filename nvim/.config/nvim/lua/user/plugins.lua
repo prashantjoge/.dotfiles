@@ -82,10 +82,11 @@ return packer.startup(function(use)
 	use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
 	use("lunarvim/darkplus.nvim")
 	use("folke/tokyonight.nvim")
+	use("folke/trouble.nvim")
 	--  use "richtan/pywal.vim"
 	--  use 'rktjmp/lush.nvim'
 	use("EdenEast/nightfox.nvim")
-	use("emacs-grammarly/lsp-grammarly") --creates huge lsp logfiles and does not work well with large files (>5000 words)
+	--use("emacs-grammarly/lsp-grammarly") --creates huge lsp logfiles and does not work well with large files (>5000 words)
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions

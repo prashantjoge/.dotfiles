@@ -1,1 +1,0 @@
-filetypes = { "markdown", "text" }
