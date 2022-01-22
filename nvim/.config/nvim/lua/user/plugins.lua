@@ -1,5 +1,6 @@
 local fn = vim.fn
 -- Automatically install packer
+--test
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
 	PACKER_BOOTSTRAP = fn.system({
@@ -96,6 +97,8 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-calc")
 	use("hrsh7th/cmp-emoji")
+	use("hrsh7th/cmp-nvim-lua")
+
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
@@ -124,7 +127,12 @@ return packer.startup(function(use)
 		},
 	})
 	use("dkarter/bullets.vim") -- for bullets and numbered lists
+	use("folke/zen-mode.nvim") --Distraction free writing
+	use("folke/twilight.nvim")
+	use("vimwiki/vimwiki")
+	use("reedes/vim-pencil")
 	--has syntax error
+
 	--use("dvdsk/prosesitter")
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
@@ -151,7 +159,6 @@ return packer.startup(function(use)
 	--  end
 	--  }
 	--
-
 	-- Telescope
 	--use("BurntSushi/ripgrep")
 	use("nvim-telescope/telescope-symbols.nvim")
@@ -160,6 +167,8 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use("sudormrfbin/cheatsheet.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
+	use("jvgrootveld/telescope-zoxide")
+	use("cljoly/telescope-repo.nvim")
 	-- Treesitter
 	use({
 

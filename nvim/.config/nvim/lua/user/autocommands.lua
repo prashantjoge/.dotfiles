@@ -24,6 +24,12 @@ vim.cmd([[
     autocmd VimResized * tabdo wincmd = 
   augroup end
 
+  augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init({'wrap': 'hard'})
+  augroup end
+ 
   augroup _alpha
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2

@@ -7,14 +7,24 @@ local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
 	return
 end
-
+cmp.setup.cmdline(":", {
+	sources = cmp.config.sources({
+		{ name = "path" },
+	}, {
+		{ name = "cmdline" },
+	}),
+})
+cmp.setup.cmdline("/", {
+	sources = {
+		{ name = "buffer" },
+	},
+})
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
-
 --   פּ ﯟ   some other good icons
 local kind_icons = {
 	Text = "",
@@ -43,7 +53,6 @@ local kind_icons = {
 	Operator = "",
 	TypeParameter = "",
 }
-
 require("cmp_dictionary").setup({
 	dic = {
 		["*"] = { "/usr/share/dict/british-english" },
@@ -56,17 +65,6 @@ require("cmp_dictionary").setup({
 	capacity = 5,
 	debug = false,
 })
-
--- require("cmp").setup.cmdline("/", {
--- 	sources = {
--- 		{ name = "buffer" },
--- 	},
--- })
--- require("cmp").setup.cmdline(":", {
--- 	sources = {
--- 		{ name = "cmdline" },
--- 	},
--- })
 
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 cmp.setup({
@@ -122,33 +120,42 @@ cmp.setup({
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			-- Kind icons
-			--vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			--vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
-				nvim_lsp = "[LSP]",
-				luasnip = "[Snippet]",
+				--	nvim_lsp = "ﲳ",
+				nvim_lsp = "[lsp]",
+				--nvim_lua = "",
+				nvim_lua = "[Lua]",
+				--luasnip = "",
+				luasnip = "Snip",
 				buffer = "[Buffer]",
-				path = "[Path]",
-				spell = "[Spell]",
+				--buffer = "﬘",
+				path = "ﱮ",
+				dictionary = "暈",
+				--spell = "暈",
+				--spell = "[Spell]",
 				calc = "[calc]",
-				cmdline = "[cmdline]",
+				cmdline = "",
+				--cmdline = "cmd",
 				emoji = "[emoji]",
-				dictionary = "[dictionary]",
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
 
 	sources = {
+
 		{ name = "nvim_lsp" },
+		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "spell" },
+		{ name = "dictionary" },
+		--	{ name = "spell" },
 		{ name = "calc" },
 		{ name = "cmdline" },
 		{ name = "emoji" },
-		{ name = "dictionary" },
 	},
 
 	confirm_opts = {

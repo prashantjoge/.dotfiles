@@ -24,6 +24,7 @@ null_ls.setup({
 		hover.dictionary,
 		completion.spell,
 		diagnostics.misspell,
+		--diagnostics.vale,
 		cmd = { "misspell" },
 		formatting.prettier.with({
 			extra_filetypes = { "txt" },
@@ -45,7 +46,7 @@ null_ls.setup({
 		--diagnostics.proselint.with({ extra_filetypes = { "txt" } }),
 		actions.proselint.with({ extra_filetypes = { "txt" } }),
 		diagnostics.vale.with({
-			extra_filetypes = { "txt", "text" },
+			extra_filetypes = { "txt", "text", "md" },
 			extra_args = { "--config=/home/aaron/.config/vale/.vale.ini" },
 		}),
 	},

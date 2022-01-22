@@ -2,6 +2,7 @@ local status_ok, trouble = pcall(require, "trouble")
 if not status_ok then
 	return
 end
+
 trouble.setup({
 	position = "right", -- position of the list can be: bottom, top, left, right
 	height = 10, -- height of the trouble list when position is top or bottom
@@ -27,6 +28,7 @@ trouble.setup({
 		toggle_preview = "P", -- toggle auto_preview
 		hover = "K", -- opens a small popup with the full multiline message
 		preview = "p", -- preview the diagnostic location
+
 		close_folds = { "zM", "zm" }, -- close all folds
 		open_folds = { "zR", "zr" }, -- open all folds
 		toggle_fold = { "zA", "za" }, -- toggle fold of current file

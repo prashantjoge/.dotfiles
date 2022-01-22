@@ -5,8 +5,12 @@ end
 local actions = require("telescope.actions")
 telescope.load_extension("media_files")
 telescope.load_extension("file_browser")
+telescope.load_extension("zoxide")
+telescope.load_extension("repo")
+--telescope.load_extension("neoclip")
 -- local builtin = require "telescope.builtin"
 -- local themes = require "telescope.themes"
+--test
 telescope.setup({
 	defaults = {
 		--layout_config = {
@@ -84,7 +88,9 @@ telescope.setup({
 		},
 	},
 	pickers = {
+
 		-- Default configuration for builtin pickers goes here:
+
 		-- find_files = {
 		--  theme = "ivy",
 		--  layout_strategy = 'horizontal',

@@ -99,6 +99,8 @@ local mappings = {
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 	["C"] = { "<cmd>Cheatsheet<cr>", "Cheatsheet" },
 	["n"] = { "<cmd>:e %:h/filename<cr>", "New File" },
+	["z"] = { "<cmd>:Telescope zoxide list<cr>", "Zoxide" },
+	["R"] = { "<cmd>:Telescope repo list bin=/usr/bin/fd<cr>", "Repo" },
 	p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },

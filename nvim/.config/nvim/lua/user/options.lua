@@ -1,4 +1,5 @@
 local options = {
+
 	backup = false, -- creates a backup file
 	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 	cmdheight = 2, -- more space in the neovim command line for displaying messages
@@ -37,7 +38,8 @@ local options = {
 	guifont = "monospace:h17", -- the font used in graphical neovim applications
 	sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal",
 }
-
+--vim.g.vimwiki_list = { { path = "~/bible/", syntax = "markdown", ext = ".md" } }
+vim.g.vimwiki_list = { { path = "~/bible/" } }
 vim.opt.shortmess:append("c")
 
 for k, v in pairs(options) do
