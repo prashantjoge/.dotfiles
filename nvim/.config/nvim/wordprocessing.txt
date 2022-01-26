@@ -34,3 +34,5 @@ Checks commonly misspelled English words in source files.
 LSP Based (checks at runtime)
 brymer-meneses/grammar-guard.nvim
 (requires lspinstall latex) (gl)
+
+test

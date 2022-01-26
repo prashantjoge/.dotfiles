@@ -70,13 +70,12 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-	use("gelguy/wilder.nvim") -- A more adventurous wild menu
+	--	use("gelguy/wilder.nvim") -- A more adventurous wild menu
 	--use "roxma/vim-hug-neovim-rpc"
 	--use("roxma/nvim-yarp")
 	use("romgrk/fzy-lua-native")
 	use("nixprime/cpsm")
 	use("sharkdp/fd")
-
 	-- auto_save
 	use("Pocco81/AutoSave.nvim")
 	-- Colorschemes
@@ -98,7 +97,10 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-calc")
 	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lua")
-
+	use({
+		"f3fora/cmp-nuspell",
+		rocks = { "lua-nuspell" },
+	})
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
@@ -132,7 +134,7 @@ return packer.startup(function(use)
 	use("vimwiki/vimwiki")
 	use("reedes/vim-pencil")
 	--has syntax error
-
+	use("mickael-menu/zk-nvim") --Neovim extension for the zk plain text note-taking assistant.
 	--use("dvdsk/prosesitter")
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP

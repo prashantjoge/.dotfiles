@@ -82,4 +82,13 @@ keymap("n", "<c-t>", "<cmd>Telescope help_tags<cr>", opts)
 keymap("n", "<A-f>", ":Format<cr>", opts)
 keymap("n", "<A-s>", ":source %<cr>", opts)
 keymap("n", "<space>fb", ":Telescope file_browser", { noremap = true })
+-- Create a new note after asking for its title.
+keymap("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", opts)
+
+-- Open notes.
+keymap("n", "<leader>zo", "<Cmd>ZkNotes<CR>", opts) -- Open notes associated with the selected tags.
+keymap("n", "<leader>zt", "<Cmd>ZkTags<CR>", opts) -- Search for the notes matching a given query.
+keymap("n", "<leader>zf", "<Cmd>ZkNotes { match = vim.fn.input('Search: ') }<CR>", opts)
+-- Search for the notes matching the current visual selection.
+keymap("v", "<leader>zf", ":'<,'>ZkMatch<CR>", opts)
 --keymap("n", "<A-f>", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)

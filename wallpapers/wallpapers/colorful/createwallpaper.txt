@@ -1,0 +1,1 @@
+ ffmpeg -y -r 1/5 -f concat -safe 0 -i "wallpapers.txt" -c:v libx264 -vf "fps=25,format=yuv420p" "out.mp4" 

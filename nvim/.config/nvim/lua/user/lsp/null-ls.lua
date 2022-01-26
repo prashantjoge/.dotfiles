@@ -24,8 +24,9 @@ null_ls.setup({
 		hover.dictionary,
 		completion.spell,
 		diagnostics.misspell,
-		--diagnostics.vale,
-		cmd = { "misspell" },
+		diagnostics.vale,
+		diagnostics.luacheck,
+		--cmd = { "misspell", "vale" },
 		formatting.prettier.with({
 			extra_filetypes = { "txt" },
 			extra_args = {
@@ -43,24 +44,21 @@ null_ls.setup({
 		-- formatting.autopep8 -- for python
 		-- diagnostics.flake8  --for python
 		--diagnostics.write_good.with({ extra_filetypes = { "txt", "tex" } }),
-		--diagnostics.proselint.with({ extra_filetypes = { "txt" } }),
-		actions.proselint.with({ extra_filetypes = { "txt" } }),
+		diagnostics.proselint.with({ extra_filetypes = { "txt" } }),
+		actions.proselint.with({ extra_filetypes = { "txt", "wiki" } }),
 		diagnostics.vale.with({
-			extra_filetypes = { "txt", "text", "md" },
+			extra_filetypes = { "txt", "text", "md", "wiki", "markdown" },
 			extra_args = { "--config=/home/aaron/.config/vale/.vale.ini" },
 		}),
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
-			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-			-- vim.cmd([[
-			--      augroup document_highlight
-			--      autocmd! * <buffer>
-			--      autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-			--      autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-			--
-			--      augroup END
-			--    ]])
+			vim.cmd([[
+            augroup LspFormatting
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            augroup END
+            ]])
 		end
 	end,
 })

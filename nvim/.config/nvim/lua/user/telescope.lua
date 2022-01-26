@@ -7,6 +7,7 @@ telescope.load_extension("media_files")
 telescope.load_extension("file_browser")
 telescope.load_extension("zoxide")
 telescope.load_extension("repo")
+telescope.load_extension("zk")
 --telescope.load_extension("neoclip")
 -- local builtin = require "telescope.builtin"
 -- local themes = require "telescope.themes"

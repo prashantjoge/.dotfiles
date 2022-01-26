@@ -19,16 +19,18 @@ require("user.indentline")
 require("user.alpha")
 require("user.whichkey")
 require("user.autocommands")
-require("user.wilder")
+--require("user.wilder")
 require("user.autosave")
 require("user.languagetool")
 --require("user.prosesitter")
 require("grammar-guard").init()
 require("user.bullets")
 require("user.notify")
+require("user.trouble")
+require("user.twilight")
+require("user.zen-mode")
+require("user.zk-nvim")
 --vim.g.tq_enabled_backends = { "openoffice_en", "mthesaur_txt" }
 --vim.g.tq_mthesaur_file = { "~/.config/nvim/thesaurus/mthesaur.txt" }
 ---vim.g.tq_language = { "en" }
 --
---vim.opt.spell = true
---vim.opt.spelllang = { "en_us" }
