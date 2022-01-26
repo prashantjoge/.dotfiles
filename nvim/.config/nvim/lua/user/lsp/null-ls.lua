@@ -18,7 +18,7 @@ local hover = null_ls.builtins.hover
 local completion = null_ls.builtins.completion
 -- test
 null_ls.setup({
-	debug = false,
+	debug = true,
 	sources = {
 		actions.gitsigns,
 		hover.dictionary,
