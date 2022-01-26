@@ -79,7 +79,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gh git-flow archlinux autojump zsh-syntax-highlighting zsh-autosuggestions docker docker-compose tmux)
+plugins=(git gh zoxide git-flow archlinux autojump zsh-syntax-highlighting zsh-autosuggestions docker docker-compose tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,7 +100,7 @@ export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/"
 
 # Compilation flags
  export ARCHFLAGS="-arch x86_64"
-
+#export Xauthority="/home/aaron/.dotfiles/x/.Xauthority"
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -149,7 +149,7 @@ FZF_CTRL_R_COMMAND="'ps -ef' \
 
 # Fortune Cookie for fun
 #fortune
-
+eval "$(zoxide init zsh)"
 
 export PATH=$PATH:/home/aaron/bin
 export PATH=$PATH:/home/aaron/langaugetool
