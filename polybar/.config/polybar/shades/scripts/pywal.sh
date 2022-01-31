@@ -29,7 +29,7 @@ change_color() {
         sed -i -e "s/color1 .*./color1 ${FG:1}/g" $RCONKY
         sed -i -e "s/color2 .*./color2 ${SH8:1}/g" $RCONKY
         sed -i -e "s/own_window_colour .*./own_window_colour ${BG:1}/g" $LCONKY
-        sed -i -e "s/own_window_colour .*./own_window_colour ${SH5:1}/g" $RCONKY
+        sed -i -e "s/own_window_colour .*./own_window_colour ${BG:1}/g" $RCONKY
 	# rofi
 	cat > $RFILE <<- EOF
 	/* colors */

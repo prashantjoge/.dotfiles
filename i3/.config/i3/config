@@ -369,7 +369,7 @@ bindsym $mod+Control+9 exec playerctl volume 1
 # bindsym $mod+Control+w exec wal -i ~/wallpapers/colorful/
 # screenshot (oldway)
 #bindsym --release Print exec scrot '%Y-%m-%d_%H.%M.%S_$wx$h.png' -e 'mv $f ~/Pictures/screenshots' -q 100 # whole screen
-bindsym --release Shift+Print exec scrot -u '%Y-%m-%d_%H.%M.%S_$wx$h.png' -e 'mv $f ~/Pictures/screenshots' # only focused window
+bindsym --release Shift+Print exec scrot  '%Y-%m-%d_%H.%M.%S_$wx$h.png' -e 'mv $f ~/Pictures/screenshots' # only focused window
 # to copy to clipboard
 #scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
 

@@ -20,13 +20,6 @@ lsp_installer.on_server_ready(function(server)
 		local sumneko_opts = require("user.lsp.settings.sumneko_lua")
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
-	if server.name == "zk" then
-		require("zk").setup({
-			lsp = {
-				config = vim.tbl_extend("force", server:get_default_options(), opts),
-			},
-		})
-	end
 	--	 if server.name == "grammarly" then
 	--	 	local grammarly_opts = require("user.lsp.settings.grammarly")
 	--	 	opts = vim.tbl_deep_extend("force", grammarly_opts, opts)

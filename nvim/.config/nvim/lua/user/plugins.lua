@@ -82,6 +82,7 @@ return packer.startup(function(use)
 	use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
 	use("lunarvim/darkplus.nvim")
 	use("folke/tokyonight.nvim")
+	use({ "AlphaTechnolog/pywal.nvim", as = "pywal" })
 	use("folke/trouble.nvim")
 	--  use "richtan/pywal.vim"
 	--  use 'rktjmp/lush.nvim'
@@ -133,7 +134,7 @@ return packer.startup(function(use)
 	use("folke/twilight.nvim")
 	use("vimwiki/vimwiki")
 	use("reedes/vim-pencil")
-	--has syntax error
+	--has syntax err o
 	use("mickael-menu/zk-nvim") --Neovim extension for the zk plain text note-taking assistant.
 	--use("dvdsk/prosesitter")
 	-- LSP
