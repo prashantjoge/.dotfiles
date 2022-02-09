@@ -20,9 +20,9 @@ local completion = null_ls.builtins.completion
 null_ls.setup({
 	debug = true,
 	sources = {
-		actions.gitsigns,
-		hover.dictionary,
-		completion.spell,
+		--	actions.gitsigns,
+		-- hover.dictionary,
+		-- completion.spell,
 		diagnostics.misspell,
 		diagnostics.vale,
 		diagnostics.luacheck,

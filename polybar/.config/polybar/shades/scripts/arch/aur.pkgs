@@ -1,1 +1,27 @@
  1. : Synchronizing package databases...
+ 2.  core downloading...
+ 3.  extra downloading...
+ 4.  community downloading...
+ 5. : Starting full system upgrade...
+ 6. resolving dependencies...
+ 7. looking for conflicting packages...
+    
+ 8. Package (12)              Old Version  New Version  Net Change  Download Size
+    
+ 9. extra/firefox             96.0.3-1     97.0-1         0.71 MiB      62.00 MiB
+10. core/systemd              250.3-2      250.3-3        0.00 MiB       7.17 MiB
+11. core/systemd-libs         250.3-2      250.3-3        0.00 MiB       0.61 MiB
+12. core/systemd-sysvcompat   250.3-2      250.3-3        0.00 MiB       0.01 MiB
+13. extra/webkit2gtk          2.34.4-1     2.34.5-1       0.00 MiB      23.44 MiB
+14. extra/xkeyboard-config    2.34-1       2.35-1         0.48 MiB       0.80 MiB
+15. extra/xorg-server         21.1.3-1     21.1.3-2       0.00 MiB       1.42 MiB
+16. extra/xorg-server-common  21.1.3-1     21.1.3-2       0.00 MiB       0.03 MiB
+17. extra/xorg-server-devel   21.1.3-1     21.1.3-2       0.00 MiB       0.20 MiB
+18. extra/xorg-server-xephyr  21.1.3-1     21.1.3-2       0.00 MiB       0.91 MiB
+19. extra/xorg-server-xnest   21.1.3-1     21.1.3-2       0.00 MiB       0.60 MiB
+20. extra/xorg-server-xvfb    21.1.3-1     21.1.3-2       0.00 MiB       0.76 MiB
+    
+21. Total Download Size    97.94 MiB
+22. Total Installed Size  374.98 MiB
+23. Net Upgrade Size        1.19 MiB
+    

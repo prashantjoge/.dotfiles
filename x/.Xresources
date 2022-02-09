@@ -15,8 +15,8 @@ Xft.hintstyle: hintslight
 ########################
 
 
-URxvt*background:  #050309
-URxvt*foreground:  #e1daea
+URxvt.background:  #050309
+URxvt.foreground:  #e1daea
 !URxvt*fading: 40
 !URxvt*fadeColor:   #002b36
 !URxvt*cursorColor: #e1daea
@@ -27,8 +27,8 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 !!black
-URxvt*color0: #0a0510
-URxvt*color8: #64e1bf
+URxvt.color0: #0a0510
+URxvt.color8: #64e1bf
 
 !! red
 URxvt.color1:       #1a1124
@@ -56,19 +56,20 @@ URxvt.color14:      #5fc8ec
 ! white
 URxvt.color7:       #e6e0ee
 URxvt.color15:      #98be1b
- URxvt*font: xft:Inconsolata Nerd Font Mono:size=16, xft:DejaVu Sans:size=14
+!URxvt.font: xft:Inconsolata Nerd Font Mono:size=16, xft:DejaVu Sans:size=14
+
+!URxvt.font: xft:Inconsolata Nerd Font Mono:size=16
 URxvt.depth: 32
 ! powerlevel10 zsh
-!URxvt.font: xft:MesloLGS NF:size=12
-
-URxvt*termName: rxvt-unicode
-URxvt*borderless: 0
-URxvt*scrollBar: false
-URxvt*saveLines: 2000
-URxvt*transparent: true
-URxvt*shading: 25
+URxvt.font: xft:MesloLGS NF:size=11
+URxvt.termName: rxvt-unicode
+URxvt.borderless: 0
+URxvt.scrollBar: false
+URxvt.saveLines: 2000
+URxvt.transparent: true
+URxvt.shading: 25
 ! URxvt*letterSpace: -1
-URxvt*scrollBar_right: false
+URxvt.scrollBar_right: false
 URxvtscrollstyle: plain
 
 URxvt.perl-ext: default,url-select
@@ -105,8 +106,8 @@ URxvt.tabbed.tab-bg: 3
 ! :
 URxvt.keysym.C-equal:    resize-font:reset
 URxvt.keysym.C-question: resize-font:show
- URxvt.keysym.C-Down:  resize-font:smaller
- URxvt.keysym.C-Up:    resize-font:bigger
+URxvt.keysym.C-Down:  resize-font:smaller
+URxvt.keysym.C-Up:    resize-font:bigger
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 

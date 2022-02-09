@@ -1,0 +1,12 @@
+ 1. firefox 96.0.3-1 -> 97.0-1
+ 2. systemd 250.3-2 -> 250.3-3
+ 3. systemd-libs 250.3-2 -> 250.3-3
+ 4. systemd-sysvcompat 250.3-2 -> 250.3-3
+ 5. webkit2gtk 2.34.4-1 -> 2.34.5-1
+ 6. xkeyboard-config 2.34-1 -> 2.35-1
+ 7. xorg-server 21.1.3-1 -> 21.1.3-2
+ 8. xorg-server-common 21.1.3-1 -> 21.1.3-2
+ 9. xorg-server-devel 21.1.3-1 -> 21.1.3-2
+10. xorg-server-xephyr 21.1.3-1 -> 21.1.3-2
+11. xorg-server-xnest 21.1.3-1 -> 21.1.3-2
+12. xorg-server-xvfb 21.1.3-1 -> 21.1.3-2
