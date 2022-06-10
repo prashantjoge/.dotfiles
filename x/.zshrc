@@ -167,3 +167,6 @@ source '/home/aaron/lib/azure-cli/az.completion'
 fpath=(~/.zsh/completion $fpath)
 # eval "$(starship init zsh)"
 # . ~/azEnv/bin/activate
+
+source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh

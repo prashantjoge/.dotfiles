@@ -30,8 +30,7 @@ require("user.trouble")
 require("user.twilight")
 require("user.zen-mode")
 require("user.zk-nvim")
-require("user.pywal")
+--require("user.pywal")
 --vim.g.tq_enabled_backends = { "openoffice_en", "mthesaur_txt" }
 --vim.g.tq_mthesaur_file = { "~/.config/nvim/thesaurus/mthesaur.txt" }
 ---vim.g.tq_language = { "en" }
---

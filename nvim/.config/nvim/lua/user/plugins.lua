@@ -60,6 +60,20 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 	use("nathom/filetype.nvim")
 	use("rcarriga/nvim-notify")
+	use("github/copilot.vim")
+	use({
+		"zbirenbaum/copilot.lua",
+		event = "InsertEnter",
+		config = function()
+			vim.schedule(function()
+				require("copilot").setup()
+			end)
+		end,
+	})
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua", "nvim-cmp" },
+	})
 	-- vim auto sessions
 	use({
 		"rmagatti/auto-session",
@@ -82,13 +96,14 @@ return packer.startup(function(use)
 	use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
 	use("lunarvim/darkplus.nvim")
 	use("folke/tokyonight.nvim")
-	use({ "AlphaTechnolog/pywal.nvim", as = "pywal" })
+	---	use({ "lalitmee/cobalt2.nvim", requires = "tjdevries/colorbuddy.vim" })
+	--use({ "AlphaTechnolog/pywal.nvim", as = "pywal" })
 	use("folke/trouble.nvim")
 	--  use "richtan/pywal.vim"
 	--  use 'rktjmp/lush.nvim'
 	use("EdenEast/nightfox.nvim")
 	--use("emacs-grammarly/lsp-grammarly") --creates huge lsp logfiles and does not work well with large files (>5000 words)
-	-- cmp plugins
+	-- cmp plugin
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
 	use("hrsh7th/cmp-path") -- path completions
@@ -98,10 +113,13 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-calc")
 	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lua")
-	use({
-		"f3fora/cmp-nuspell",
-		rocks = { "lua-nuspell" },
-	})
+	--use({
+	--	"f3fora/cmp-nuspell",
+	--		rocks = { "lua-nuspell" },
+	--	})
+
+	use("hrsh7th/cmp-nvim-lsp-signature-help")
+	use("ray-x/cmp-treesitter")
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
@@ -142,7 +160,8 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-	--use "onsails/lspkind-nvim"
+	use("folke/lua-dev.nvim") --Dev setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
+	use("onsails/lspkind-nvim")
 	-- Bullets Does not work
 	--  use {'nvim-orgmode/orgmode', config = function()
 	--        require('orgmode').setup{}
@@ -174,10 +193,13 @@ return packer.startup(function(use)
 	use("cljoly/telescope-repo.nvim")
 	-- Treesitter
 	use({
-
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use("nvim-treesitter/playground")
+	use("windwp/nvim-ts-autotag")
+	use("nvim-treesitter/nvim-treesitter-textobjects")
+
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("p00f/nvim-ts-rainbow")
 

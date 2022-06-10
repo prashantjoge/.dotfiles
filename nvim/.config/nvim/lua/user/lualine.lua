@@ -6,7 +6,7 @@ end
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
-
+--require("colorbuddy").colorscheme("cobalt2")
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
@@ -65,8 +65,9 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		--theme = "tokyonight",
-		theme = "pywal-nvim",
+		theme = "tokyonight",
+		--theme = "cobalt2",
+		--theme = "pywal-nvim",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },

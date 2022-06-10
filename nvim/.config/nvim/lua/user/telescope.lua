@@ -8,6 +8,7 @@ telescope.load_extension("file_browser")
 telescope.load_extension("zoxide")
 telescope.load_extension("repo")
 telescope.load_extension("zk")
+telescope.load_extension("notify")
 --telescope.load_extension("neoclip")
 -- local builtin = require "telescope.builtin"
 -- local themes = require "telescope.themes"
@@ -112,7 +113,8 @@ telescope.setup({
 			find_cmd = "rg", -- find command (defaults to `fd`)
 		},
 		file_browser = {
-			theme = "ivy",
+			--theme = "ivy",
+			theme = "pywal-nvim",
 			mappings = {
 				["i"] = {
 					-- your custom insert mode mappings

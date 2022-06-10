@@ -2,7 +2,6 @@ local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
 	return
 end
-
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
 	return
@@ -19,12 +18,13 @@ cmp.setup.cmdline("/", {
 		{ name = "buffer" },
 	},
 })
-require("luasnip/loaders/from_vscode").lazy_load()
 
+--cmp.require("luasnip/loaders/from_vscode").lazy_load()
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
+
 --   פּ ﯟ   some other good icons
 local kind_icons = {
 	Text = "",
@@ -73,8 +73,16 @@ cmp.setup({
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+		documentation = {
+			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+		},
+	},
 	mapping = {
 		["<C-k>"] = cmp.mapping.select_prev_item(),
+
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
@@ -84,6 +92,7 @@ cmp.setup({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
+
 		-- Accept currently selected item. If none selected, `select` first item.
 		-- Set `select` to `false` to only confirm explicitly selected items.
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
@@ -94,8 +103,8 @@ cmp.setup({
 				luasnip.expand()
 			elseif luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
-			elseif check_backspace() then
-				fallback()
+			elseif copilot_keys ~= "" and type(copilot_keys) == "string" then
+				vim.api.nvim_feedkeys(copilot_keys, "i", true)
 			else
 				fallback()
 			end
@@ -116,6 +125,7 @@ cmp.setup({
 			"s",
 		}),
 	},
+
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
@@ -134,10 +144,10 @@ cmp.setup({
 				path = "ﱮ",
 				dictionary = "暈",
 				--spell = "暈",
-				spell = "[Spell]",
+				--spell = "[Spell]",
 				nuspell = "[nuspell]",
-				calc = "[calc]",
-				cmdline = "",
+				--calc = "[calc]",
+				--cmdline = "",
 				--cmdline = "cmd",
 				emoji = "[emoji]",
 			})[entry.source.name]
@@ -146,11 +156,13 @@ cmp.setup({
 	},
 
 	sources = {
-
+		{ name = "copilot" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
+		{ name = "nvim_lsp_signature_help" },
+		{ name = "treesitter" },
 		{ name = "path" },
 		{ name = "dictionary" },
 		{ name = "spell" },
@@ -159,13 +171,19 @@ cmp.setup({
 		{ name = "cmdline" },
 		{ name = "emoji" },
 	},
-
+	sorting = {
+		comparators = {
+			cmp.config.compare.recently_used,
+			cmp.config.compare.offset,
+			cmp.config.compare.score,
+			cmp.config.compare.sort_text,
+			cmp.config.compare.length,
+			cmp.config.compare.order,
+		},
+	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
-	},
-	documentation = {
-		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 	},
 	experimental = {
 		ghost_text = true,

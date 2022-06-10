@@ -61,7 +61,7 @@ URxvt.color15:      #98be1b
 !URxvt.font: xft:Inconsolata Nerd Font Mono:size=16
 URxvt.depth: 32
 ! powerlevel10 zsh
-URxvt.font: xft:MesloLGS NF:size=11
+URxvt.font: xft:MesloLGS NF:size=13
 URxvt.termName: rxvt-unicode
 URxvt.borderless: 0
 URxvt.scrollBar: false

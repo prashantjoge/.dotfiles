@@ -9,8 +9,10 @@ local keymap = vim.api.nvim_set_keymap
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
--- Modes
+vim.g.copilot_no_tab_map = true
+--vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
 --   normal_mode = "n",
 --   insert_mode = "i",
 --   visual_mode = "v",
